@@ -58,28 +58,25 @@ Os protótipos de interface e os fluxos de navegação da aplicação foram dese
 
 ![Mapa de Telas do FinPulse](docs/prototipo_telas.png)
 
-* **Arquivo do Protótipo (HTML/Design):** [docs/prototipo_telas.html](docs/prototipo_telas.html)
-* **Link de Visualização no Figma (Opcional):** [Acessar Protótipo no Figma](https://www.figma.com/) *(ou mantenha o mapa de telas exportado acima, conforme permitido pelo edital)*
-
-### Mapa de Telas e Fluxos Projetados
+- **Arquivo do Protótipo (HTML/Design):** [docs/prototipo_telas.html](docs/prototipo_telas.html) (Mapa de Telas e Fluxos Projetados)
 
 1. **Dashboard / Visão Geral (`app/(tabs)/index.tsx`):**
-   * Exibição dos cards de Saldo Atual, Receitas e Despesas do mês.
-   * Gráfico de rosca ou indicador resumido das principais categorias de despesa.
-   * Lista das movimentações mais recentes e botão de ação flutuante (FAB) para cadastrar movimentação.
+   - Exibição dos cards de Saldo Atual, Receitas e Despesas do mês.
+   - Gráfico de rosca ou indicador resumido das principais categorias de despesa.
+   - Lista das movimentações mais recentes e botão de ação flutuante (FAB) para cadastrar movimentação.
 2. **Extrato Completo (`app/(tabs)/extrato.tsx`):**
-   * Barra de pesquisa para busca por descrição da movimentação.
-   * Filtros por chips (*Todas*, *Receitas*, *Despesas* e período).
-   * Itens da lista com identificação visual por cor (verde para receitas, vermelho para despesas), ícone da categoria e valor.
+   - Barra de pesquisa para busca por descrição da movimentação.
+   - Filtros por chips (_Todas_, _Receitas_, _Despesas_ e período).
+   - Itens da lista com identificação visual por cor (verde para receitas, vermelho para despesas), ícone da categoria e valor.
 3. **Metas de Orçamento (`app/(tabs)/metas.tsx`):**
-   * Listagem das metas do mês com barras de progresso percentuais dinâmicas.
-   * Indicadores visuais de alerta (verde para seguro, amarelo para atenção e vermelho para limite estourado).
+   - Listagem das metas do mês com barras de progresso percentuais dinâmicas.
+   - Indicadores visuais de alerta (verde para seguro, amarelo para atenção e vermelho para limite estourado).
 4. **Relatórios e Resumo (`app/(tabs)/relatorios.tsx`):**
-   * Visualização da distribuição percentual de despesas por categoria no mês.
-   * Resumo de economia e balanço mensal.
+   - Visualização da distribuição percentual de despesas por categoria no mês.
+   - Resumo de economia e balanço mensal.
 5. **Modal / Tela de Nova Transação (`app/transacao/nova.tsx`):**
-   * Formulário limpo com campos de valor monetário mascarado, descrição, seletor de categoria, seletor de data e switch de status (pago/pendente).
-   * Exibição de mensagens de erro de validação em tempo real com Zod.
+   - Formulário limpo com campos de valor monetário mascarado, descrição, seletor de categoria, seletor de data e switch de status (pago/pendente).
+   - Exibição de mensagens de erro de validação em tempo real com Zod.
 
 ---
 
@@ -134,26 +131,26 @@ erDiagram
 
 ### Dicionário de Dados
 
-* **`CATEGORIA`**: Armazena as categorias disponíveis para classificação de receitas e despesas.
-  * `id`: Chave primária inteira autoincremental.
-  * `nome`: Nome descritivo da categoria (ex: Alimentação, Salário).
-  * `tipo`: Define se é uma categoria aplicável a `'receita'` ou `'despesa'`.
-  * `icone`: Nome do ícone da biblioteca de ícones (ex: FontAwesome / Ionicons).
-  * `cor`: Código hexadecimal para identidade visual da categoria.
-* **`TRANSACAO`**: Armazena o registro de cada movimentação financeira.
-  * `id`: Chave primária inteira autoincremental.
-  * `descricao`: Título resumido da movimentação (ex: "Compras no mercado").
-  * `valor`: Montante em reais (numérico real positivo).
-  * `data`: Data de competência da movimentação (ISO 8601 `YYYY-MM-DD`).
-  * `tipo`: Classificação (`'receita'` ou `'despesa'`).
-  * `categoria_id`: Chave estrangeira que referencia a tabela `CATEGORIA`.
-  * `status`: Situação do pagamento (`'pago'` ou `'pendente'`).
-  * `observacao`: Detalhamento textual complementar opcional.
-* **`META`**: Armazena os tetos orçamentários definidos por categoria para um determinado mês.
-  * `id`: Chave primária inteira autoincremental.
-  * `categoria_id`: Categoria que possui limite estipulado.
-  * `valor_limite`: Valor máximo planejado para gastos naquela categoria no mês.
-  * `mes_ano`: Mês de referência no formato `'YYYY-MM'`.
+- **`CATEGORIA`**: Armazena as categorias disponíveis para classificação de receitas e despesas.
+  - `id`: Chave primária inteira autoincremental.
+  - `nome`: Nome descritivo da categoria (ex: Alimentação, Salário).
+  - `tipo`: Define se é uma categoria aplicável a `'receita'` ou `'despesa'`.
+  - `icone`: Nome do ícone da biblioteca de ícones (ex: FontAwesome / Ionicons).
+  - `cor`: Código hexadecimal para identidade visual da categoria.
+- **`TRANSACAO`**: Armazena o registro de cada movimentação financeira.
+  - `id`: Chave primária inteira autoincremental.
+  - `descricao`: Título resumido da movimentação (ex: "Compras no mercado").
+  - `valor`: Montante em reais (numérico real positivo).
+  - `data`: Data de competência da movimentação (ISO 8601 `YYYY-MM-DD`).
+  - `tipo`: Classificação (`'receita'` ou `'despesa'`).
+  - `categoria_id`: Chave estrangeira que referencia a tabela `CATEGORIA`.
+  - `status`: Situação do pagamento (`'pago'` ou `'pendente'`).
+  - `observacao`: Detalhamento textual complementar opcional.
+- **`META`**: Armazena os tetos orçamentários definidos por categoria para um determinado mês.
+  - `id`: Chave primária inteira autoincremental.
+  - `categoria_id`: Categoria que possui limite estipulado.
+  - `valor_limite`: Valor máximo planejado para gastos naquela categoria no mês.
+  - `mes_ano`: Mês de referência no formato `'YYYY-MM'`.
 
 ---
 
@@ -167,24 +164,24 @@ O desenvolvimento do projeto foi organizado em **6 Sprints** ao longo das 15 sem
 [Sprints 5 e 6: Semanas 10 a 15] --> Checkpoint Final (SQLite, Zod & Build APK)
 ```
 
-| Sprint | Duração | Foco Principal | Tarefas / Entregáveis Previstos | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Sprint 1** | Semanas 1 e 2 | **Concepção e Requisitos** | • Definição do escopo do aplicativo e persona do usuário.<br>• Levantamento de requisitos funcionais e regras de negócio.<br>• Elaboração do documento de arquitetura e proposta de valor. | Concluído |
-| **Sprint 2** | Semanas 3 e 4 | **Prototipação e Modelagem** | • Criação do protótipo navegável (Mobile UI).<br>• Modelagem do banco relacional SQLite e DER em Mermaid.<br>• Estruturação do `README.md` no repositório GitHub.<br>• **Entrega: Checkpoint 1**. | Concluído |
-| **Sprint 3** | Semanas 5 e 6 | **Setup e Roteamento** | • Criação do projeto Expo com template TypeScript.<br>• Configuração de workflow no Git (Branches, PRs e commits semânticos).<br>• Estruturação do Expo Router com layouts aninhados (`Tabs` e `Stack`).<br>• Configuração de tema e biblioteca de ícones. | A Fazer |
-| **Sprint 4** | Semanas 7 a 9 | **UI e Componentização** | • Configuração do NativeWind (Tailwind CSS) para estilização.<br>• Criação de componentes reutilizáveis em `components/` (`Card`, `SummaryCard`, `TransactionItem`).<br>• Implementação de dados mockados para testes visuais.<br>• Gravação do vídeo demonstrativo parcial.<br>• **Entrega: Checkpoint 2**. | A Fazer |
-| **Sprint 5** | Semanas 10 a 12 | **Persistência e Validação** | • Criação do banco SQLite local (`expo-sqlite`) e migrations.<br>• Implementação de `TransactionRepository`, `CategoryRepository` e `BudgetRepository`.<br>• Criação dos schemas de validação com **Zod** para os formulários.<br>• Tratamento de erros, feedback visual e cálculo de balanços por categoria. | A Fazer |
-| **Sprint 6** | Semanas 13 a 15 | **Build, Ajustes e Defesa** | • Geração da build final do APK Android via **EAS Build**.<br>• Criação de Release no GitHub com o `.apk` anexado.<br>• Geração da imagem de destaques no Gerador de Cards da disciplina.<br>• Gravação e publicação do vídeo final de defesa (máx. 7 min).<br>• **Entrega: Checkpoint Final**. | A Fazer |
+| Sprint       | Duração         | Foco Principal               | Tarefas / Entregáveis Previstos                                                                                                                                                                                                                                                                   | Status    |
+| :----------- | :-------------- | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------- |
+| **Sprint 1** | Semanas 1 e 2   | **Concepção e Requisitos**   | • Definição do escopo do aplicativo e persona do usuário.• Levantamento de requisitos funcionais e regras de negócio.• Elaboração do documento de arquitetura e proposta de valor.                                                                                                                | Concluído |
+| **Sprint 2** | Semanas 3 e 4   | **Prototipação e Modelagem** | • Criação do protótipo navegável (Mobile UI).• Modelagem do banco relacional SQLite e DER em Mermaid.• Estruturação do `README.md` no repositório GitHub.• **Entrega: Checkpoint 1**.                                                                                                             | Concluído |
+| **Sprint 3** | Semanas 5 e 6   | **Setup e Roteamento**       | • Criação do projeto Expo com template TypeScript.• Configuração de workflow no Git (Branches, PRs e commits semânticos).• Estruturação do Expo Router com layouts aninhados (`Tabs` e `Stack`).• Configuração de tema e biblioteca de ícones.                                                    | A Fazer   |
+| **Sprint 4** | Semanas 7 a 9   | **UI e Componentização**     | • Configuração do NativeWind (Tailwind CSS) para estilização.• Criação de componentes reutilizáveis em `components/` (`Card`, `SummaryCard`, `TransactionItem`).• Implementação de dados mockados para testes visuais.• Gravação do vídeo demonstrativo parcial.• **Entrega: Checkpoint 2**.      | A Fazer   |
+| **Sprint 5** | Semanas 10 a 12 | **Persistência e Validação** | • Criação do banco SQLite local (`expo-sqlite`) e migrations.• Implementação de `TransactionRepository`, `CategoryRepository` e `BudgetRepository`.• Criação dos schemas de validação com **Zod** para os formulários.• Tratamento de erros, feedback visual e cálculo de balanços por categoria. | A Fazer   |
+| **Sprint 6** | Semanas 13 a 15 | **Build, Ajustes e Defesa**  | • Geração da build final do APK Android via**EAS Build**.• Criação de Release no GitHub com o `.apk` anexado.• Geração da imagem de destaques no Gerador de Cards da disciplina.• Gravação e publicação do vídeo final de defesa (máx. 7 min).• **Entrega: Checkpoint Final**.                    | A Fazer   |
 
 ---
 
 ## Tecnologias e Ferramentas Previstas
 
-* **Ambiente de Desenvolvimento:** Node.js, Yarn / npm, Expo CLI.
-* **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) e TypeScript.
-* **Roteamento:** [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing).
-* **Estilização:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS para React Native) e [React Native Elements](https://reactnativeelements.com/).
-* **Gerenciamento de Estado:** [Zustand](https://docs.pmnd.rs/zustand) e `@react-native-async-storage/async-storage`.
-* **Banco de Dados Local:** [Expo SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) com Repository Pattern.
-* **Validação de Schemas:** [Zod](https://zod.dev/).
-* **Compilação e Publicação:** [EAS Build](https://docs.expo.dev/build/introduction/).
+- **Ambiente de Desenvolvimento:** Node.js, Yarn / npm, Expo CLI.
+- **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) e TypeScript.
+- **Roteamento:** [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing).
+- **Estilização:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS para React Native) e [React Native Elements](https://reactnativeelements.com/).
+- **Gerenciamento de Estado:** [Zustand](https://docs.pmnd.rs/zustand) e `@react-native-async-storage/async-storage`.
+- **Banco de Dados Local:** [Expo SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) com Repository Pattern.
+- **Validação de Schemas:** [Zod](https://zod.dev/).
+- **Compilação e Publicação:** [EAS Build](https://docs.expo.dev/build/introduction/).
