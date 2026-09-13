@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinPulse - Mapa de Telas (Protótipos de Interface)</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #0f172a;
+      }
+      /* Phone frame styling */
+      .phone-mockup {
+        width: 320px;
+        height: 660px;
+        border-radius: 42px;
+        background: #ffffff;
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          0 0 0 10px #1e293b,
+          0 0 0 12px #334155;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .dynamic-island {
+        width: 90px;
+        height: 22px;
+        background: #000;
+        border-radius: 20px;
+        margin: 8px auto 0;
+        z-index: 20;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="p-8 min-h-screen text-slate-100 flex flex-col items-center justify-center"
+  >
+    <!-- Header Showcase -->
+    <div class="text-center mb-10 max-w-3xl">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3"
+      >
+        <i class="fa-solid fa-layer-group"></i> Protótipos de Tela (Mobile UI)
+      </div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">
+        FinPulse
+        <span class="text-emerald-400 font-normal">| Mapa de Telas</span>
+      </h1>
+    </div>
+
+    <!-- Screens Grid -->
+    <div
+      class="flex flex-wrap items-start justify-center gap-8 w-full max-w-[1450px]"
+    >
+      <!-- TELA 1: DASHBOARD -->
+      <div class="flex flex-col items-center">
+        <span
+          class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Tela 01:
+          Dashboard (Home)
+        </span>
+        <div class="phone-mockup">
+          <!-- Status Bar -->
+          <div
+            class="px-6 pt-1 flex justify-between items-center text-[10px] text-slate-800 font-semibold select-none"
+          >
+            <span>09:41</span>
+            <div class="dynamic-island"></div>
+            <div class="flex items-center gap-1.5 text-xs">
+              <i class="fa-solid fa-signal"></i>
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-battery-full"></i>
+            </div>
+          </div>
+
+          <!-- Phone Content -->
+          <div
+            class="flex-1 overflow-y-auto hide-scrollbar p-4 text-slate-900 flex flex-col justify-between"
+          >
+            <div>
+              <!-- Header User -->
+              <div class="flex items-center justify-between mt-1 mb-4">
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm shadow-sm"
+                  >
+                    G
+                  </div>
+                  <div>
+                    <p class="text-[11px] text-slate-400 leading-none">
+                      Bem-vindo,
+                    </p>
+                    <h2 class="text-sm font-bold text-slate-800">
+                      Gabriel Mororó
+                    </h2>
+                  </div>
+                </div>
+                <button
+                  class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-xs"
+                >
+                  <i class="fa-regular fa-bell"></i>
+                </button>
+              </div>
+
+              <!-- Card Saldo Principal -->
+              <div
+                class="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-2xl p-4 text-white shadow-lg shadow-emerald-700/20 mb-3"
+              >
+                <div
+                  class="flex items-center justify-between text-xs text-emerald-100 mb-1"
+                >
+                  <span>Saldo Disponível</span>
+                  <i class="fa-regular fa-eye text-[11px] cursor-pointer"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold tracking-tight">
+                  R$ 5.420,50
+                </h3>
+                <div
+                  class="mt-3 pt-3 border-t border-emerald-500/40 flex justify-between text-xs"
+                >
+                  <div>
+                    <span class="text-[10px] text-emerald-200 block"
+                      >Receitas</span
+                    >
+                    <span
+                      class="font-bold flex items-center gap-1 text-emerald-100"
+                    >
+                      <i class="fa-solid fa-arrow-down text-[9px]"></i> R$
+                      7.250,00
+                    </span>
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-emerald-200 block"
+                      >Despesas</span
+                    >
+                    <span
+                      class="font-bold flex items-center gap-1 text-rose-200"
+                    >
+                      <i class="fa-solid fa-arrow-up text-[9px]"></i> R$
+                      1.829,50
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ações Rápidas -->
+              <div class="grid grid-cols-3 gap-2 mb-4">
+                <div
+                  class="bg-slate-50 border border-slate-100 rounded-xl p-2 flex flex-col items-center justify-center text-center cursor-pointer"
+                >
+                  <div
+                    class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs mb-1"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                  <span class="text-[10px] font-semibold text-slate-700"
+                    >Receita</span
+                  >
+                </div>
+                <div
+                  class="bg-slate-50 border border-slate-100 rounded-xl p-2 flex flex-col items-center justify-center text-center cursor-pointer"
+                >
+                  <div
+                    class="w-7 h-7 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs mb-1"
+                  >
+                    <i class="fa-solid fa-minus"></i>
+                  </div>
+                  <span class="text-[10px] font-semibold text-slate-700"
+                    >Despesa</span
+                  >
+                </div>
+                <div
+                  class="bg-slate-50 border border-slate-100 rounded-xl p-2 flex flex-col items-center justify-center text-center cursor-pointer"
+                >
+                  <div
+                    class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs mb-1"
+                  >
+                    <i class="fa-solid fa-bullseye"></i>
+                  </div>
+                  <span class="text-[10px] font-semibold text-slate-700"
+                    >Metas</span
+                  >
+                </div>
+              </div>
+
+              <!-- Últimas Transações -->
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-slate-800"
+                  >Últimas Transações</span
+                >
+                <span
+                  class="text-[10px] font-semibold text-emerald-600 cursor-pointer"
+                  >Ver todas</span
+                >
+              </div>
+
+              <div class="space-y-2">
+                <!-- Item 1 -->
+                <div
+                  class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-xs"
+                    >
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="text-xs font-bold text-slate-800 leading-tight"
+                      >
+                        Supermercado
+                      </h4>
+                      <span class="text-[10px] text-slate-400"
+                        >Hoje • Alimentação</span
+                      >
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-rose-600"
+                    >- R$ 245,80</span
+                  >
+                </div>
+
+                <!-- Item 2 -->
+                <div
+                  class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs"
+                    >
+                      <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="text-xs font-bold text-slate-800 leading-tight"
+                      >
+                        Salário UTFPR
+                      </h4>
+                      <span class="text-[10px] text-slate-400"
+                        >05 Set • Trabalho</span
+                      >
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-emerald-600"
+                    >+ R$ 4.250,00</span
+                  >
+                </div>
+
+                <!-- Item 3 -->
+                <div
+                  class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <div
+                      class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs"
+                    >
+                      <i class="fa-solid fa-gas-pump"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="text-xs font-bold text-slate-800 leading-tight"
+                      >
+                        Posto Ipiranga
+                      </h4>
+                      <span class="text-[10px] text-slate-400"
+                        >03 Set • Transporte</span
+                      >
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-rose-600"
+                    >- R$ 180,00</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Tab Bar -->
+            <div
+              class="pt-2 border-t border-slate-100 flex items-center justify-around text-slate-400 mt-2"
+            >
+              <div
+                class="flex flex-col items-center text-emerald-600 font-bold text-[10px]"
+              >
+                <i class="fa-solid fa-house text-sm mb-0.5"></i> Início
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-receipt text-sm mb-0.5"></i> Extrato
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-chart-pie text-sm mb-0.5"></i> Metas
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-chart-line text-sm mb-0.5"></i> Relatórios
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TELA 2: EXTRATO COMPLETO -->
+      <div class="flex flex-col items-center">
+        <span
+          class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-blue-400"></span> Tela 02:
+          Extrato e Filtros
+        </span>
+        <div class="phone-mockup">
+          <!-- Status Bar -->
+          <div
+            class="px-6 pt-1 flex justify-between items-center text-[10px] text-slate-800 font-semibold select-none"
+          >
+            <span>09:41</span>
+            <div class="dynamic-island"></div>
+            <div class="flex items-center gap-1.5 text-xs">
+              <i class="fa-solid fa-signal"></i>
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-battery-full"></i>
+            </div>
+          </div>
+
+          <!-- Phone Content -->
+          <div
+            class="flex-1 overflow-y-auto hide-scrollbar p-4 text-slate-900 flex flex-col justify-between"
+          >
+            <div>
+              <!-- Header -->
+              <div class="flex items-center justify-between mt-1 mb-3">
+                <h2 class="text-base font-extrabold text-slate-800">
+                  Extrato de Gastos
+                </h2>
+                <button
+                  class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-regular fa-calendar"></i> Setembro
+                </button>
+              </div>
+
+              <!-- Busca Textual (LIKE) -->
+              <div class="relative mb-3">
+                <i
+                  class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Buscar lançamentos..."
+                  value="Muffato"
+                  class="w-full pl-8 pr-3 py-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none"
+                  readonly
+                />
+              </div>
+
+              <!-- Filtros por Chips -->
+              <div class="flex items-center gap-1.5 mb-3">
+                <span
+                  class="px-3 py-1 bg-emerald-600 text-white rounded-full text-[10px] font-bold shadow-sm"
+                  >Todas (24)</span
+                >
+                <span
+                  class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold"
+                  >Receitas</span
+                >
+                <span
+                  class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold"
+                  >Despesas</span
+                >
+              </div>
+
+              <!-- Lista Agrupada -->
+              <div class="space-y-3">
+                <div>
+                  <span
+                    class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 block"
+                    >Hoje • 13 Setembro</span
+                  >
+                  <div class="space-y-1.5">
+                    <div
+                      class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                    >
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-7 h-7 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-xs"
+                        >
+                          <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-bold text-slate-800 leading-tight"
+                          >
+                            Supermercado Muffato
+                          </p>
+                          <span class="text-[9px] text-slate-400"
+                            >11:42 • Alimentação</span
+                          >
+                        </div>
+                      </div>
+                      <span class="text-xs font-bold text-rose-600"
+                        >- R$ 245,80</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                    >
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-7 h-7 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xs"
+                        >
+                          <i class="fa-solid fa-film"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-bold text-slate-800 leading-tight"
+                          >
+                            Cinema Shopping
+                          </p>
+                          <span class="text-[9px] text-slate-400"
+                            >14:10 • Lazer</span
+                          >
+                        </div>
+                      </div>
+                      <span class="text-xs font-bold text-rose-600"
+                        >- R$ 42,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <span
+                    class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 block"
+                    >Ontem • 12 Setembro</span
+                  >
+                  <div class="space-y-1.5">
+                    <div
+                      class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                    >
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs"
+                        >
+                          <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-bold text-slate-800 leading-tight"
+                          >
+                            Freelance Website
+                          </p>
+                          <span class="text-[9px] text-slate-400"
+                            >18:30 • Trabalho</span
+                          >
+                        </div>
+                      </div>
+                      <span class="text-xs font-bold text-emerald-600"
+                        >+ R$ 850,00</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100"
+                    >
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-7 h-7 rounded-lg bg-red-100 text-red-600 flex items-center justify-center text-xs"
+                        >
+                          <i class="fa-solid fa-tv"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-bold text-slate-800 leading-tight"
+                          >
+                            Netflix
+                          </p>
+                          <span class="text-[9px] text-slate-400"
+                            >03:00 • Assinatura</span
+                          >
+                        </div>
+                      </div>
+                      <span class="text-xs font-bold text-rose-600"
+                        >- R$ 55,90</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Tab Bar -->
+            <div
+              class="pt-2 border-t border-slate-100 flex items-center justify-around text-slate-400 mt-2"
+            >
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-house text-sm mb-0.5"></i> Início
+              </div>
+              <div
+                class="flex flex-col items-center text-emerald-600 font-bold text-[10px]"
+              >
+                <i class="fa-solid fa-receipt text-sm mb-0.5"></i> Extrato
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-chart-pie text-sm mb-0.5"></i> Metas
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-chart-line text-sm mb-0.5"></i> Relatórios
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TELA 3: METAS DE ORÇAMENTO -->
+      <div class="flex flex-col items-center">
+        <span
+          class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span> Tela 03: Metas
+          & Orçamento
+        </span>
+        <div class="phone-mockup">
+          <!-- Status Bar -->
+          <div
+            class="px-6 pt-1 flex justify-between items-center text-[10px] text-slate-800 font-semibold select-none"
+          >
+            <span>09:41</span>
+            <div class="dynamic-island"></div>
+            <div class="flex items-center gap-1.5 text-xs">
+              <i class="fa-solid fa-signal"></i>
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-battery-full"></i>
+            </div>
+          </div>
+
+          <!-- Phone Content -->
+          <div
+            class="flex-1 overflow-y-auto hide-scrollbar p-4 text-slate-900 flex flex-col justify-between"
+          >
+            <div>
+              <!-- Header -->
+              <div class="flex items-center justify-between mt-1 mb-3">
+                <div>
+                  <h2 class="text-base font-extrabold text-slate-800">
+                    Metas do Mês
+                  </h2>
+                  <p class="text-[10px] text-slate-400">Setembro 2026</p>
+                </div>
+                <button
+                  class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 font-bold flex items-center justify-center text-xs"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+
+              <!-- Card Consumo Geral -->
+              <div class="bg-slate-900 text-white rounded-2xl p-3.5 mb-3">
+                <div
+                  class="flex items-center justify-between text-[11px] text-slate-300 mb-1"
+                >
+                  <span>Orçamento Total Previsto</span>
+                  <span class="font-bold text-amber-400">65% consumido</span>
+                </div>
+                <div class="flex items-baseline justify-between mb-2">
+                  <h3 class="text-lg font-bold">R$ 1.829,50</h3>
+                  <span class="text-[10px] text-slate-400">de R$ 2.800,00</span>
+                </div>
+                <!-- Barra de progresso geral -->
+                <div
+                  class="w-full h-2 bg-slate-800 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Lista de Metas por Categoria -->
+              <span class="text-[11px] font-bold text-slate-800 mb-2 block"
+                >Categorias com Limite</span
+              >
+
+              <div class="space-y-2.5">
+                <!-- Meta 1: Alimentação (Atenção 75%) -->
+                <div
+                  class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl"
+                >
+                  <div class="flex items-center justify-between text-xs mb-1">
+                    <span
+                      class="font-bold text-slate-800 flex items-center gap-1.5"
+                    >
+                      <i
+                        class="fa-solid fa-utensils text-orange-500 text-[10px]"
+                      ></i>
+                      Alimentação
+                    </span>
+                    <span class="text-[10px] font-bold text-amber-600"
+                      >75%</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between text-[10px] text-slate-500 mb-1"
+                  >
+                    <span>Gasto: R$ 675,00</span>
+                    <span>Limite: R$ 900,00</span>
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-amber-500 rounded-full"
+                      style="width: 75%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Meta 2: Moradia (Estourado 100%) -->
+                <div
+                  class="p-2.5 bg-rose-50/60 border border-rose-100 rounded-xl"
+                >
+                  <div class="flex items-center justify-between text-xs mb-1">
+                    <span
+                      class="font-bold text-slate-800 flex items-center gap-1.5"
+                    >
+                      <i
+                        class="fa-solid fa-house text-rose-500 text-[10px]"
+                      ></i>
+                      Moradia & Contas
+                    </span>
+                    <span class="text-[10px] font-bold text-rose-600"
+                      >100% (Atingido)</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between text-[10px] text-slate-500 mb-1"
+                  >
+                    <span>Gasto: R$ 850,00</span>
+                    <span>Limite: R$ 850,00</span>
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-rose-500 rounded-full"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Meta 3: Lazer (Tranquilo 35%) -->
+                <div
+                  class="p-2.5 bg-slate-50 border border-slate-100 rounded-xl"
+                >
+                  <div class="flex items-center justify-between text-xs mb-1">
+                    <span
+                      class="font-bold text-slate-800 flex items-center gap-1.5"
+                    >
+                      <i
+                        class="fa-solid fa-gamepad text-purple-500 text-[10px]"
+                      ></i>
+                      Lazer & Viagens
+                    </span>
+                    <span class="text-[10px] font-bold text-emerald-600"
+                      >35%</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between text-[10px] text-slate-500 mb-1"
+                  >
+                    <span>Gasto: R$ 140,00</span>
+                    <span>Limite: R$ 400,00</span>
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-emerald-500 rounded-full"
+                      style="width: 35%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Tab Bar -->
+            <div
+              class="pt-2 border-t border-slate-100 flex items-center justify-around text-slate-400 mt-2"
+            >
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-house text-sm mb-0.5"></i> Início
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-receipt text-sm mb-0.5"></i> Extrato
+              </div>
+              <div
+                class="flex flex-col items-center text-emerald-600 font-bold text-[10px]"
+              >
+                <i class="fa-solid fa-chart-pie text-sm mb-0.5"></i> Metas
+              </div>
+              <div
+                class="flex flex-col items-center text-slate-400 text-[10px]"
+              >
+                <i class="fa-solid fa-chart-line text-sm mb-0.5"></i> Relatórios
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TELA 4: FORMULÁRIO / NOVA TRANSAÇÃO -->
+      <div class="flex flex-col items-center">
+        <span
+          class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-rose-400"></span> Tela 04: Nova
+          Transação
+        </span>
+        <div class="phone-mockup">
+          <!-- Status Bar -->
+          <div
+            class="px-6 pt-1 flex justify-between items-center text-[10px] text-slate-800 font-semibold select-none"
+          >
+            <span>09:41</span>
+            <div class="dynamic-island"></div>
+            <div class="flex items-center gap-1.5 text-xs">
+              <i class="fa-solid fa-signal"></i>
+              <i class="fa-solid fa-wifi"></i>
+              <i class="fa-solid fa-battery-full"></i>
+            </div>
+          </div>
+
+          <!-- Phone Content -->
+          <div
+            class="flex-1 overflow-y-auto hide-scrollbar p-4 text-slate-900 flex flex-col justify-between"
+          >
+            <div>
+              <!-- Modal Header -->
+              <div class="flex items-center justify-between mt-1 mb-3">
+                <button
+                  class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs"
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="text-xs font-bold text-slate-800">
+                  Nova Movimentação
+                </h2>
+                <div class="w-7"></div>
+              </div>
+
+              <!-- Segmented Control: Tipo -->
+              <div class="bg-slate-100 p-1 rounded-xl flex gap-1 mb-4">
+                <button
+                  class="flex-1 py-1.5 text-center text-xs font-bold rounded-lg bg-rose-600 text-white shadow-sm flex items-center justify-center gap-1"
+                >
+                  <i class="fa-solid fa-arrow-up text-[10px]"></i> Despesa
+                </button>
+                <button
+                  class="flex-1 py-1.5 text-center text-xs font-semibold text-slate-600 flex items-center justify-center gap-1"
+                >
+                  <i class="fa-solid fa-arrow-down text-[10px]"></i> Receita
+                </button>
+              </div>
+
+              <!-- Input Valor Principal -->
+              <div class="text-center mb-4">
+                <span
+                  class="text-[10px] text-slate-400 block font-semibold uppercase"
+                  >Valor da Despesa</span
+                >
+                <div
+                  class="flex items-center justify-center gap-1 text-2xl font-extrabold text-slate-900 mt-1"
+                >
+                  <span class="text-sm font-bold text-slate-400">R$</span>
+                  <span>149,90</span>
+                </div>
+                <span
+                  class="text-[9px] text-emerald-600 flex items-center justify-center gap-1 mt-0.5 font-medium"
+                >
+                  <i class="fa-solid fa-check text-[8px]"></i> Valor válido
+                </span>
+              </div>
+
+              <!-- Formulário com Validação -->
+              <div class="space-y-2.5">
+                <!-- Descrição -->
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5"
+                    >Descrição</label
+                  >
+                  <input
+                    type="text"
+                    value="Tênis de Treino"
+                    class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-medium focus:outline-none"
+                    readonly
+                  />
+                </div>
+
+                <!-- Categoria Seletor -->
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5"
+                    >Categoria</label
+                  >
+                  <div
+                    class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-medium flex items-center justify-between"
+                  >
+                    <span class="flex items-center gap-2">
+                      <span
+                        class="w-5 h-5 rounded-md bg-purple-100 text-purple-600 flex items-center justify-center text-[10px]"
+                      >
+                        <i class="fa-solid fa-dumbbell"></i>
+                      </span>
+                      Saúde & Esporte
+                    </span>
+                    <i
+                      class="fa-solid fa-chevron-down text-[10px] text-slate-400"
+                    ></i>
+                  </div>
+                </div>
+
+                <!-- Data -->
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5"
+                    >Data</label
+                  >
+                  <div
+                    class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-medium flex items-center justify-between"
+                  >
+                    <span>13/09/2026</span>
+                    <i
+                      class="fa-regular fa-calendar text-[11px] text-slate-400"
+                    ></i>
+                  </div>
+                </div>
+
+                <!-- Switch Status Pago/Pendente -->
+                <div
+                  class="flex items-center justify-between p-2 bg-slate-50 border border-slate-200 rounded-xl"
+                >
+                  <div>
+                    <span
+                      class="text-xs font-bold text-slate-800 block leading-tight"
+                      >Já está pago?</span
+                    >
+                    <span class="text-[9px] text-slate-400"
+                      >Descontar do saldo imediatamente</span
+                    >
+                  </div>
+                  <div
+                    class="w-9 h-5 bg-emerald-500 rounded-full p-0.5 flex items-center justify-end"
+                  >
+                    <div class="w-4 h-4 bg-white rounded-full shadow-sm"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão Submeter -->
+            <div class="mt-3">
+              <button
+                class="w-full py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-md shadow-emerald-600/30 flex items-center justify-center gap-1.5"
+              >
+                <i class="fa-solid fa-check"></i> Confirmar Lançamento
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="mt-10 text-center text-xs text-slate-500">
+      <p>FinPulse Mobile</p>
+    </div>
+  </body>
+</html>
