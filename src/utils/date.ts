@@ -63,3 +63,26 @@ export function formatDayLabel(iso: string, today = new Date()): string {
   const date = parseISODate(iso);
   return `${date.getDate()} de ${MONTHS[date.getMonth()]}`;
 }
+
+export function formatBRDate(iso: string): string {
+  const [year, month, day] = iso.split('-');
+  return `${day}/${month}/${year}`;
+}
+
+// Converte DD/MM/AAAA para YYYY-MM-DD; retorna null se a data não existir.
+export function parseBRDate(text: string): string | null {
+  const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(text.trim());
+  if (!match) return null;
+
+  const [, day, month, year] = match.map(Number);
+  const date = new Date(year, month - 1, day);
+  const valid =
+    date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+  return valid ? toISODate(date) : null;
+}
+
+// Máscara de digitação DD/MM/AAAA.
+export function maskBRDate(text: string): string {
+  const digits = text.replace(/\D/g, '').slice(0, 8);
+  return [digits.slice(0, 2), digits.slice(2, 4), digits.slice(4, 8)].filter(Boolean).join('/');
+}
