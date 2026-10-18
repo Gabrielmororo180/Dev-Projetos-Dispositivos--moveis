@@ -29,9 +29,10 @@ export interface CategoryTotal {
   percentual: number;
 }
 
+// Formato compatível com o SectionList: `data` são os itens da seção.
 export interface TransactionSection {
-  data: string; // YYYY-MM-DD
-  transactions: Transaction[];
+  day: string; // YYYY-MM-DD
+  data: Transaction[];
 }
 
 const sum = (values: number[]) => values.reduce((total, value) => total + value, 0);
@@ -77,10 +78,10 @@ export function groupByDay(transactions: Transaction[]): TransactionSection[] {
   const sections: TransactionSection[] = [];
   for (const transaction of sortByDateDesc(transactions)) {
     const last = sections[sections.length - 1];
-    if (last?.data === transaction.data) {
-      last.transactions.push(transaction);
+    if (last?.day === transaction.data) {
+      last.data.push(transaction);
     } else {
-      sections.push({ data: transaction.data, transactions: [transaction] });
+      sections.push({ day: transaction.data, data: [transaction] });
     }
   }
   return sections;
