@@ -177,11 +177,48 @@ O desenvolvimento do projeto foi organizado em **6 Sprints** ao longo das 15 sem
 
 ## Tecnologias e Ferramentas Previstas
 
-- **Ambiente de Desenvolvimento:** Node.js, Yarn / npm, Expo CLI.
-- **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) e TypeScript.
+- **Ambiente de Desenvolvimento:** Node.js, npm, Expo CLI.
+- **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) (SDK 58) e TypeScript.
 - **Roteamento:** [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing).
-- **Estilização:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS para React Native) e [React Native Elements](https://reactnativeelements.com/).
+- **Estilização:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS para React Native).
 - **Gerenciamento de Estado:** [Zustand](https://docs.pmnd.rs/zustand) e `@react-native-async-storage/async-storage`.
 - **Banco de Dados Local:** [Expo SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) com Repository Pattern.
 - **Validação de Schemas:** [Zod](https://zod.dev/).
 - **Compilação e Publicação:** [EAS Build](https://docs.expo.dev/build/introduction/).
+- **Qualidade de Código:** ESLint (`eslint-config-expo`) e Prettier.
+
+---
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) 20 ou superior (com npm)
+- Aplicativo [Expo Go](https://expo.dev/go) no celular, ou um emulador Android / simulador iOS
+
+### Passo a passo
+
+```bash
+# 1. Clonar o repositório
+git clone https://github.com/Gabrielmororo180/Dev-Projetos-Dispositivos--moveis.git
+cd Dev-Projetos-Dispositivos--moveis
+
+# 2. Instalar as dependências
+npm install
+
+# 3. Iniciar o servidor de desenvolvimento
+npx expo start
+```
+
+Com o servidor rodando, leia o QR Code com o Expo Go (Android) ou com a câmera (iOS), ou pressione `a` para abrir no emulador Android e `w` para abrir no navegador.
+
+### Scripts úteis
+
+| Comando | Descrição |
+| :--- | :--- |
+| `npm start` | Inicia o servidor do Expo |
+| `npm run android` | Abre o app no emulador Android |
+| `npm run web` | Abre o app no navegador |
+| `npm run lint` | Verifica o código com ESLint |
+| `npm run typecheck` | Verifica os tipos com TypeScript |
+| `npm run format` | Formata o código com Prettier |
