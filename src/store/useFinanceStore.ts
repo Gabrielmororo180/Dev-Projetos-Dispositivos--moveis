@@ -76,6 +76,11 @@ export function useTransaction(id: number) {
   return useFinanceStore((state) => state.transactions.find((t) => t.id === id));
 }
 
+export function useCategoriesById() {
+  const categories = useFinanceStore((state) => state.categories);
+  return useMemo(() => new Map(categories.map((c) => [c.id, c])), [categories]);
+}
+
 export function useCategory(id: number | undefined) {
   return useFinanceStore((state) => state.categories.find((c) => c.id === id));
 }
