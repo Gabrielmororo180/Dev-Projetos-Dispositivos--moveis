@@ -178,7 +178,7 @@ O desenvolvimento do projeto foi organizado em **6 Sprints** ao longo das 15 sem
 ## Tecnologias e Ferramentas Previstas
 
 - **Ambiente de Desenvolvimento:** Node.js, npm, Expo CLI.
-- **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) (SDK 58) e TypeScript.
+- **Framework Mobile:** [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/) (SDK 57, versão suportada pelo Expo Go das lojas) e TypeScript.
 - **Roteamento:** [Expo Router](https://docs.expo.dev/router/introduction/) (File-based routing).
 - **Estilização:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS para React Native).
 - **Gerenciamento de Estado:** [Zustand](https://docs.pmnd.rs/zustand) e `@react-native-async-storage/async-storage`.
