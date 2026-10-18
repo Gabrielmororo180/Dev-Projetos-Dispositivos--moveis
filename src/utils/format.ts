@@ -11,3 +11,9 @@ export function formatSignedCurrency(value: number, tipo: 'receita' | 'despesa')
 export function formatPercent(ratio: number): string {
   return `${Math.round(ratio * 100)}%`;
 }
+
+// Máscara monetária: os dígitos digitados são lidos como centavos ("1550" vira R$ 15,50).
+export function parseCurrencyInput(text: string): number {
+  const digits = text.replace(/\D/g, '');
+  return digits ? Number(digits) / 100 : 0;
+}
