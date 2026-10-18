@@ -115,6 +115,12 @@ export function getBudgetsProgress(
     });
 }
 
+export function getBudgetTotals(progress: BudgetProgress[]) {
+  const limite = sum(progress.map((item) => item.budget.valor_limite));
+  const gasto = sum(progress.map((item) => item.gasto));
+  return { limite, gasto, percentual: limite > 0 ? gasto / limite : 0 };
+}
+
 export function getExpensesByCategory(
   transactions: Transaction[],
   categories: Category[],
